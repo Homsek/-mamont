@@ -1,0 +1,202 @@
+.header {
+   border-bottom: 1px solid $stroke;
+   background-color: $backLight;
+   position: relative;
+   z-index: 3;
+
+   &__container {
+      height: $headerHeight;
+      padding: 0 20px;
+      margin: 0 auto;
+      max-width: $width;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   &__logo {
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 120%;
+      color: $head;
+      z-index: 5;
+   }
+
+   &__list {
+      display: flex;
+      gap: 40px;
+   }
+
+   &__list-num {
+      display: none;
+   }
+
+   &__list-item {
+      color: $mainText;
+      font-size: 16px;
+      line-height: 140%;
+   }
+
+   &__list-item:hover {
+      text-decoration: underline;
+   }
+
+   &__num-container {
+      text-align: right;
+      z-index: 5  ;
+   }
+
+   &__num {
+      font-family: Alumni Sans;
+      font-size: 30px;
+      font-weight: 700;
+      color: $head;
+      margin-bottom: 2px;
+   }
+
+   &__num-button {
+      position: relative;
+      color: $primary;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 130%;
+   }
+
+   &__num-button::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      right: 0;
+      height: 1px;
+      width: 0%;
+      background-color: $primary;
+      transition: all 0.3s;
+   }
+
+   &__num-button:hover::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      right: 0;
+      height: 1px;
+      width: 100%;
+      background-color: $primary;
+   }
+
+   &__menu-button {
+      display: none;
+      position: relative;
+      z-index: 3;
+      height: 27px;
+      width: 32px;
+
+      span {
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         height: 13%;
+         width: 100%;
+         background-color: $primary;
+         transition: all 0.3s;
+      }
+   }
+
+   &__menu-button::before,
+   &__menu-button::after {
+      content: '';
+      position: absolute;
+      height: 13%;
+      width: 100%;
+      background-color: $primary;
+      transition: all 0.3s;
+   }
+
+   &__menu-button::before {
+      top: 0;
+   }
+
+   &__menu-button::after {
+      bottom: 0;
+   }
+
+   &__menu-button._active span {
+      transform: translateY(-50%) scale(0);
+      background-color: $primary;
+   }
+
+   &__menu-button._active::before {
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
+      background-color: $primary;
+   }
+
+   &__menu-button._active::after {
+      bottom: 50%;
+      transform: translateY(50%) rotate(45deg);
+      background-color: $primary;
+   }
+
+   @media (max-width: 1100px) {
+
+      &__logo {
+         font-size: 16px;
+      }
+
+      &__list-item {
+         font-size: 15px;
+      }
+
+      &__num {
+         font-size: 24px;
+      }
+   }
+
+   @media (max-width: 1024px) {
+
+      &__container {
+         justify-content: start;
+         gap: 20px;
+      }
+
+      &__logo {
+         flex-grow: 1;
+      }
+      &__list {
+         background-color: $stroke;
+         z-index: 1;
+         padding: 50px 20px 20px 20px;
+         height: 100vh;
+         flex-direction: column;
+         justify-content: center;
+         text-align: right;
+         position: fixed;
+         min-width: 420px;
+         top: 0;
+         right: -450px;
+         transition: right 0.3s;
+      }
+
+      &__list._active {
+         right: 0;
+      }
+
+      &__list-item {
+         font-size: 20px;
+      }
+
+      &__menu-button {
+         display: block;
+      }
+   }
+
+   @media (max-width: 470px) {
+      &__num-container {
+         display: none;
+      }
+
+      &__list-num {
+         margin-top: 30px;
+         display: block;
+      }
+   }
+}
