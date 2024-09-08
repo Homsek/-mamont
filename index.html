@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>mamion</title>
+</head>
+<body>
+   <div class="wrapper">
+      <main class="main">
+         <div class="pumping">
+            <p class="pumping__passive">пассивно - <span id="pumping-passive">0</span></p>
+            <p class="pumping__click">при клике - <span id="pumping-click">1</span></p>
+         </div>
+         <div class="main-wrapper">
+            <div class="main-content">
+               <h1>мамонт clicker</h1>
+               <h3>lvl. <span id="lvl">1</span></h3>
+               <div class="level"><span class="count-click">0</span>/<span class="lvl-click">30</span></div>
+               <div>
+                  <div class="_flex">
+                     <div class="click"><img class="click-img" src="img/lvl1.jpg" alt=""></div>
+                  </div>
+                  <p class="score">0</p>
+               </div>
+            </div>
+         </div>
+         <div class="button-shop"><</div>
+         <div class="shop">
+            <div class="level-up _passive-score">Пассивный заработок<img src="https://cdn-icons-png.flaticon.com/512/639/639365.png" alt=""><span class="_shop-one">30</span><div class="count-shop__container"><span class="count-shop" id="passive">0</span></div></div>
+            <div class="level-up _double-click">Двойной клик<img src="https://cdn-icons-png.flaticon.com/512/3742/3742837.png" alt=""><span class="_shop-two">20</span><div class="count-shop__container"><span class="count-shop" id="double">0</span></div></div>
+            <div class="level-up _plant-mammoth">растишка для мамонта<img src="https://vetandlife.ru/wp-content/uploads/2021/09/1eed54da95e55555586e85ce84d2d838.png" alt=""><span class="_shop-three">100</span><div class="count-shop__container"><span class="count-shop" id="plant">0</span></div></div>
+         </div>
+         <div class="fullscreen-contaier">
+            <video loop="" muted autoplay="" poster="video/plane.jpg" class="fullscreen-bg">
+               <source src="video.mp4" type="video/mp4">
+             </video>
+         </div>
+      </main>
+   </div>
+</body>
+<script src="js/script.js"></script>
+</html>
